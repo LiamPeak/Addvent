@@ -1,0 +1,949 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Acme', sans-serif;
+  letter-spacing: 2px;
+  margin-bottom: 15px;;
+}
+
+input {
+  width: 75%;
+  margin-right: 0;
+  padding: 10px;
+  border: none;
+  font-size: 14px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.addBtn {
+  width: 25%;
+  padding: 10px;
+  margin-left:0;
+  background: #ff9c9c;
+  color: #555;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}
+
+.addBtn:hover {
+  background-color: #bbb;
+  color: #FFF;
+}
+
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  background: #eee;
+  font-size: 14px;
+  transition: 0.2s;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+ul li:nth-child(odd) {
+  background: #b2bec3;
+}
+
+ul li:hover {
+  background: #ddd;
+}
+
+ul li.checked {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+ul li.checked::before {
+  content: "";
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+.far {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.far:hover {
+  background-color: tomato;
+  color: white;
+}
+
+/*
+body {
+    background-color: #D22020;
+    font-family:Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+    overflow: hidden;
+}
+
+form {
+    min-height: 5vh;
+    padding-bottom: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input, form button {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    background: white;
+    outline: none;
+}
+
+form button {
+    color: white;
+    background: rgb(255, 159, 159);
+    cursor: pointer;
+    transition: all 0.3 ease;
+}
+
+form button:hover {
+    background: white;
+    color: rgb(255, 121, 121);
+}
+
+div {
+    border-style: solid;
+    border-color: black;
+    border-width: 10px;
+}
+
+.home-calendar {
+    text-underline-offset: unset;
+    text-align: center;
+    padding-top: 50px;
+    font-size: 30px;
+    padding-bottom: 35px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+}
+
+.home-calendar:hover {
+    background-color: #ee6262;
+    transition: all 1s ease 0s;
+}
+
+.home-calendar a {
+    text-decoration: none;
+    color: white;
+}
+
+.home-calendar a:hover {
+    background-color: #ee6262;
+    transition: all 1s ease 1s;
+}
+
+.logo {
+    margin-top: 25px;
+    margin-left: 375px;
+    margin-right: 50px;
+}
+
+.home-label1 {
+    color: darkred;
+    font-size: 35px;
+    margin-top: 30px;
+    margin-left: 800px;
+    margin-right: 800px;
+    text-align: center;
+    text-underline-position: below;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.home-label2 {
+    color: orangered;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-left: 800px;
+    margin-right: 800px;
+    text-align: center;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.home-label3 {
+    color: orange;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-left: 800px;
+    margin-right: 800px;
+    text-align: center;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.home-label4 {
+    color: yellow;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-left: 800px;
+    margin-right: 800px;
+    text-align: center;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.home-personal {
+    text-underline-offset: unset;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 450px;
+    padding-bottom: 580px;
+    font-size: 30px;
+    margin-right: 1650px;
+    margin-top: -728px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+}
+
+.home-personal:hover {
+    background-color: #ee6262;
+    transition: all 1s ease 0s;
+}
+
+.home-personal a {
+    text-decoration: none;
+    color: white;
+}
+
+.home-personal a:hover {
+    background-color: #ee6262;
+    transition: all 1s ease 1s;
+}
+
+.home-community {
+    text-underline-offset: unset;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 450px;
+    padding-bottom: 580px;
+    font-size: 30px;
+    margin-left: 1650px;
+    margin-top: -1095px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+}
+
+.home-community:hover {
+    background-color: #ee6262;
+    transition: all 1s ease 0s;
+}
+
+.home-community a {
+    text-decoration: none;
+    color: white;
+}
+
+.home-community a:hover {
+    background-color: #ee6262;
+    transition: all 1s ease 1s;
+}
+
+.home-progress {
+    text-underline-offset: unset;
+    text-align: center;
+    vertical-align: bottom;
+    padding-top: 50px;
+    font-size: 30px;
+    padding-bottom: 35px;
+    margin-top: -131px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+}
+
+.home-progress:hover {
+    background-color: #ee6262;
+    transition: all 1s ease 0s;
+}
+
+.home-progress a {
+    text-decoration: none;
+    color: white;
+}
+
+.home-progress a:hover {
+    background-color: #ee6262;
+    transition: all 1s ease 1s;
+}
+
+
+
+
+
+
+
+.personal-label1 {
+    color: darkred;
+    font-size: 35px;
+    margin-top: 30px;
+    margin-left: 500px;
+    margin-right: 700px;
+    text-align: center;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.personal-home {
+    text-align: center;
+    padding-top: 500px;
+    padding-bottom: 510px;
+    margin-top: -130px;
+    font-size: 35px;
+    margin-left: 1500px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+}
+
+.personal-home:hover {
+    background-color: #ee6262;
+    transition: all 1s ease 0s;
+}
+
+.personal-home a {
+    text-decoration: none;
+    color: white;
+}
+
+.personal-home a:hover {
+    background-color: #ee6262;
+    transition: all 1s ease 1s;
+}
+
+.personal-label2 {
+    text-align-last: center;
+    font-size: 30px;
+    margin-right: 900px;
+    margin-left: 700px;
+    margin-top: -915px;
+    background: #ee6262;
+    color: black;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.personal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.personal-list {
+    min-width: 50%;
+    list-style: none;
+    padding-bottom: 50px;
+}
+
+.personal {
+    margin: 0.4rem;
+    background: white;
+    color: black;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.personal li {
+    flex: 1;
+}
+
+.trash-btn {
+    background: rgb(255, 193, 193);
+    color: white;
+    border: none;
+    padding: 0.63rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.personal-title-input label {
+    margin-left: 540px;
+}
+
+.personal-title-input input {
+    size: 30px;
+    margin-top: 25px;
+    word-wrap: normal;
+    text-align: center;
+    block-size: 35px;
+    width: 450px;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.personal-description-input label {
+    margin-left: 480px;
+}
+
+.personal-description-input input {
+    size: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    word-wrap: normal;
+    text-align: center;
+    block-size: 100px;
+    width: 550px;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.personal-button {
+    background-color: #74f13a;
+    color: #74f13a;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 200px;
+    padding-right: 200px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 0px;
+    margin-right: 950px;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border: 3px;
+    border-color: rgb(54, 119, 0);
+    border-style: solid;
+}
+
+.personal-button button {
+    background-color: #74f13a;
+    border-style: unset;
+    font-size: 25px;
+}
+
+
+
+
+
+.community-label1 {
+    color: darkred;
+    font-size: 35px;
+    margin-top: 30px;
+    margin-left: 700px;
+    margin-right: 500px;
+    text-align: center;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.community-home {
+    text-align: center;
+    padding-top: 500px;
+    padding-bottom: 510px;
+    margin-top: -130px;
+    font-size: 35px;
+    margin-right: 1500px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+}
+
+.community-home:hover {
+    background-color: #ee6262;
+    transition: all 1s ease 0s;
+}
+
+.community-home a {
+    text-decoration: none;
+    color: white;
+}
+
+.community-home a:hover {
+    background-color: #ee6262;
+    transition: all 1s ease 1s;
+}
+
+.community-label2 {
+    text-align-last: center;
+    font-size: 30px;
+    margin-left: 900px;
+    margin-right: 700px;
+    margin-top: -915px;
+    background: #ee6262;
+    color: black;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.community-box {
+    align-content: center;
+    margin-left: 720px;
+    margin-right: 500px;
+    background: white;
+    color: black;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    block-size: 500px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.community-box li {
+    flex: 1;
+}
+
+.community-title-input label {
+    margin-left: 740px;
+}
+
+.community-title-input input {
+    size: 30px;
+    margin-top: 25px;
+    word-wrap: normal;
+    text-align: center;
+    block-size: 35px;
+    width: 450px;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.community-description-input label {
+    margin-left: 680px;
+}
+
+.community-description-input input {
+    size: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    word-wrap: normal;
+    text-align: center;
+    block-size: 100px;
+    width: 550px;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.community-add {
+    background-color: #74f13a;
+    color: #74f13a;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 200px;
+    padding-right: 200px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 525px;
+    margin-left: 825px;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border: 3px;
+    border-color: rgb(54, 119, 0);
+    border-style: solid;
+}
+
+.community-add button {
+    background-color: #74f13a;
+    border-style: unset;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.community-x-button {
+    background: white;
+    color: rgb(228, 23, 23);
+    border: none;
+    padding: 0.63rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+.calendar-label1 {
+    font-size: 35px;
+    text-align: center;
+    margin-top: 35px;
+    margin-left: 650px;
+    margin-right: 650px;
+    margin-bottom: 30px;
+    color: darkred;
+}
+
+.calendar-label2 {
+    font-size: 35px;
+    text-align: center;
+    margin-left: 650px;
+    margin-right: 650px;
+    margin-bottom: 5px;
+}
+
+.calendar-label3 {
+    font-size: 25px;
+    text-align: center;
+    margin-left: 650px;
+    margin-right: 650px;
+}
+
+.calendar-column1 {
+    font-size: 10px;
+    text-align: center;
+    margin-left: 600px;
+    margin-right: 600px;
+}
+
+.calendar-column2 {
+    font-size: 10px;
+    text-align: center;
+    margin-left: 600px;
+    margin-right: 600px;
+}
+
+.calendar-column3 {
+    font-size: 10px;
+    text-align: center;
+    margin-left: 600px;
+    margin-right: 600px;
+}
+
+.calendar-column4 {
+    font-size: 10px;
+    text-align: center;
+    margin-left: 600px;
+    margin-right: 600px;
+}
+
+.calendar-column5 {
+    font-size: 10px;
+    text-align: center;
+    margin-left: 600px;
+    margin-right: 600px;
+}
+
+.edit-calendar {
+    text-align: top;
+    width: 85px;
+    height: 85px;
+    outline: unset;
+    background-color: darkred;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.calendar-home {
+    text-align: center;
+    padding-bottom: 35px;
+    padding-top: 50px;
+    margin-top: 65px;
+    margin-right: -700px;
+    margin-left: -700px;
+    font-size: 35px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+}
+
+.calendar-home:hover {
+    background-color: #ee6262;
+    transition: all 1s ease 0s;
+}
+
+.calendar-home a {
+    text-decoration: none;
+    color: white;
+}
+
+.calendar-home a:hover {
+    background-color: #ee6262;
+    transition: all 1s ease 1s;
+}
+
+.calendar-previous-month {
+    background-color: #def03c;
+    color: #def03c;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 700px;
+    margin-left: 700px;
+    margin-top: 10px;
+    margin-bottom: -100px;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border: 3px;
+    border-color: rgb(209, 212, 33);
+    border-style: solid;
+}
+
+.calendar-previous-month button {
+    background-color: #def03c;
+    border-style: unset;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.calendar-next-month {
+    background-color: #def03c;
+    color: #def03c;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 700px;
+    margin-left: 1000px;
+    margin-top: -40px;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border: 3px;
+    border-color: rgb(209, 212, 33);
+    border-style: solid;
+}
+
+.calendar-next-month button {
+    background-color: #def03c;
+    border-style: unset;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+
+
+
+.progress-home {
+    text-underline-offset: unset;
+    text-align: center;
+    padding-top: 75px;
+    font-size: 30px;
+    padding-bottom: 60px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+}
+
+.progress-home:hover {
+    background-color: #ee6262;
+    transition: all 1s ease 0s;
+}
+
+.progress-home a {
+    text-decoration: none;
+    color: white;
+}
+
+.progress-home a:hover {
+    background-color: #ee6262;
+    transition: all 1s ease 1s;
+}
+
+.progress-label1 {
+    color: darkred;
+    font-size: 75px;
+    margin-top: 60px;
+    margin-left: 750px;
+    margin-right: 750px;
+    text-align: center;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.progress-label2 {
+    color: rgb(255, 81, 0);
+    font-size: 35px;
+    margin-top: 30px;
+    margin-left: 800px;
+    margin-right: 800px;
+    text-align: center;
+    text-underline-position: below;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.progress-label3 {
+    color: rgb(255, 208, 0);
+    font-size: 35px;
+    margin-top: 30px;
+    margin-left: 800px;
+    margin-right: 800px;
+    text-align: center;
+    text-underline-position: below;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.progress-label4 {
+    color: rgb(162, 190, 0);
+    font-size: 35px;
+    margin-top: 30px;
+    margin-left: 780px;
+    margin-right: 780px;
+    text-align: center;
+    text-underline-position: below;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.progress-label5 {
+    color: rgb(0, 163, 82);
+    font-size: 35px;
+    margin-top: 30px;
+    margin-left: 800px;
+    margin-right: 800px;
+    text-align: center;
+    text-underline-position: below;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.progress-label6 {
+    color: rgb(0, 163, 155);
+    font-size: 35px;
+    margin-top: 30px;
+    margin-left: 700px;
+    margin-right: 700px;
+    text-align: center;
+    text-underline-position: below;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.progress-achievements {
+    text-align: center;
+    padding-bottom: 75px;
+    padding-top: 60px;
+    margin-top: 75px;
+    margin-right: -700px;
+    margin-left: -700px;
+    font-size: 35px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+}
+
+.progress-achievements:hover {
+    background-color: #ee6262;
+    transition: all 1s ease 0s;
+}
+
+.progress-achievements a {
+    text-decoration: none;
+    color: white;
+}
+
+.progress-achievements a:hover {
+    background-color: #ee6262;
+    transition: all 1s ease 1s;
+}
+
+
+
+
+
+.achievements-progress {
+    text-underline-offset: unset;
+    text-align: center;
+    padding-top: 75px;
+    font-size: 30px;
+    padding-bottom: 60px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+}
+
+.achievements-progress:hover {
+    background-color: #ee6262;
+    transition: all 1s ease 0s;
+}
+
+.achievements-progress a {
+    text-decoration: none;
+    color: white;
+}
+
+.achievements-progress a:hover {
+    background-color: #ee6262;
+    transition: all 1s ease 1s;
+}
+
+.achievements-label {
+    color: rgb(255, 93, 29);
+    font-size: 35px;
+    margin-top: 30px;
+    margin-left: 700px;
+    margin-right: 700px;
+    text-align: center;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.achievements-row1 {
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-right: 1350px;
+    text-align: center;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    text-orientation: sideways-right;
+    align-items: stretch;
+}
+
+.achievements-row2 {
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    margin-left: 700px;
+    margin-right: 700px;
+    padding-top: -100vh;
+    text-align: center;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.achievements-row3 {
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    margin-top: 0px;
+    margin-left: 1350px;
+    margin-right: 50px;
+    text-align: center;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    margin-block-start: 0px;
+}
+
+.achievements-complete {
+    margin-bottom: 45px;
+}
+*/
